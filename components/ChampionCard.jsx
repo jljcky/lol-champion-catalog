@@ -6,8 +6,8 @@ const ChampionCard = ({ champion }) => {
         <Link href={`/champions/${champion.id}`}>
             <a className={styles["card-container"]}>
                 <div>
-                    <img style={{ width: '200px' }} src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`} />
-                    <h4>{champion.name}</h4>
+                    <img style={{ width: '150px', height: '200px', objectFit: 'cover', objectPosition: '0 0' }} src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`} />
+                    <h2>{champion.name}</h2>
                 </div>
             </a>
         </Link>);
