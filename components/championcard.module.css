@@ -2,4 +2,16 @@
     text-align: center;
     display: inline-block;
     background-color: green;
+    position: relative;
+}
+
+.card-border {
+    position: absolute;
+    top: 0;
+    border: solid yellow 2px;
+    opacity: 0;
+}
+
+.card-container:hover .card-border {
+    opacity: 1;
 }
