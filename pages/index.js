@@ -33,7 +33,6 @@ export default function Home({champions}) {
 
 export const getStaticProps = async () => {
   const allChampionData = await getAllChampionData();
-  // const latestVersion = await getLatestVersion();
 
   return {
     props: {
