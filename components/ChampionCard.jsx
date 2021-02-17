@@ -7,17 +7,17 @@ const ChampionCard = ({ champion, isMobile, latestVersion }) => {
             <a className={styles["card-container"]}>
                 {
                     isMobile ? (
-                        <div style={{ height: '100px' }}>
-                            <img style={{ width: '100px', height: '100px' }} src={`http://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/champion/${champion.id}.png`} />
-                            <div className={styles['card-border']} style={{ width: '96px', height: '96px' }} />
+                        <div style={{ height: '75px' }}>
+                            <img className={styles['card-image']} style={{ width: '75px', height: '75px' }} src={`http://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/champion/${champion.id}.png`} />
+                            <div className={styles['card-border']} style={{ width: '71px', height: '71px' }} />
                         </div>
                     )
                         :
                         (
                             <div>
-                                <img style={{ width: '150px', height: '200px', objectFit: 'cover', objectPosition: '0 0' }} src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`} />
+                                <img className={styles['card-image']} style={{ width: '150px', height: '220px', objectFit: 'cover', objectPosition: '0 0' }} src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`} />
                                 <h3>{champion.name}</h3>
-                                <div className={styles['card-border']} style={{ width: '146px', height: '196px' }} />
+                                <div className={styles['card-border']} style={{ width: '146px', height: '216px' }} />
                             </div>
                         )
                 }

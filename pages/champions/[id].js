@@ -17,9 +17,21 @@ const Champion = ({champion}) => {
                 <button style={{position: 'absolute', width: '10%', left: 0}} onClick={() => setSkinNum(skinIndex-1 < 0 ? champion.skins.length-1 : skinIndex-1)}>left</button>
                 <button style={{position: 'absolute', width: '10%', right: 0}} onClick={() => setSkinNum(skinIndex+1 >= champion.skins.length ? 0 : skinIndex+1)}>right</button>
             </div>
-            <h1>{champion.name}</h1>
+            <h1>{skinIndex ? champion.skins[skinIndex].name : champion.name}</h1>
             <h2>{champion.title}</h2>
             <p>{champion.lore}</p>
+            <div>
+                <h2>{champion.passive.name}</h2>
+                <p dangerouslySetInnerHTML={{__html: champion.passive.description}}/>
+            </div>
+            {
+                champion.spells.map((spell) => (
+                    <div key={spell.id}>
+                        <h2>{spell.name}</h2>
+                        <p dangerouslySetInnerHTML={{__html: spell.description}}/>
+                    </div>
+                ))
+            }
         </div> 
     );
 }

@@ -17,21 +17,23 @@ import { useState } from 'react';
 export default function Home({champions, latestVersion}) {
   const [searchTerm, setSearchTerm] = useState("");
   const isMobile = useMediaQuery({
-    query: '(max-device-width: 513px)'
+    query: '(max-width: 704px)'
   })
 
   return (
     <div className={styles.container}>
       <h1>League of Legends Champion Catalog</h1>
-      <input className={styles.searchbar} type="text" placeholder="Search for a Champion...." value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value)}}/>
       <div className={styles.catalog}>
+        <input className={styles['catalog-searchbar']} type="text" placeholder="Search for a Champion...." value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value)}}/>
         <div className={styles['catalog-container']}>
-          {champions.map((champion) => {
-            if (champion.name.toLowerCase().includes(searchTerm.toLowerCase()))
-              return (
-              <ChampionCard key={champion.key} champion={champion} latestVersion={latestVersion} isMobile={isMobile}/>
-              )
-          })}
+          <div className={styles['catalog-grid']}>
+            {champions.map((champion) => {
+              if (champion.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                return (
+                <ChampionCard key={champion.key} champion={champion} latestVersion={latestVersion} isMobile={isMobile}/>
+                )
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,14 +1,15 @@
 .card-container {
     text-align: center;
     display: inline-block;
-    background-color: green;
     position: relative;
 }
+
+.card-image {}
 
 .card-border {
     position: absolute;
     top: 0;
-    border: solid yellow 2px;
+    border: solid rgb(240, 182, 25) 2px;
     opacity: 0;
 }
 
